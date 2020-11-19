@@ -1,6 +1,7 @@
 import React from "react";
+import { Text, View, Button } from "react-native";
 
-function AboutScreen() {
+export default function AboutScreen() {
   return (
     <View style={{ alignItems: "center", justifyContent: "center", flex: 1 }}>
       <Text
@@ -15,5 +16,3 @@ function AboutScreen() {
     </View>
   );
 }
-
-export default AboutScreen;

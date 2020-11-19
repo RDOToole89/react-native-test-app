@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, Button } from "react-native";
-import { roundToNearestPixel } from "react-native/Libraries/Utilities/PixelRatio";
 
 export default function HomeScreen({ navigation, route }) {
   const [count, setCount] = useState(1);
@@ -23,8 +22,8 @@ export default function HomeScreen({ navigation, route }) {
         Welcome to my awesome app!
       </Text>
       <Button
-        title="Go to Game"
-        onPress={() => navigation.navigate("Game", { screen: "Play", count })}
+        title="Play Game"
+        onPress={() => navigation.navigate("Game", { screen: "Play", params: { count } })}
       />
     </View>
   );
