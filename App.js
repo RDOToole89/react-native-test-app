@@ -7,6 +7,7 @@ import HomeScreen from "./src/components/HomeScreen";
 import Flex from "./src/components/flex";
 import AboutScreen from "./src/components/AboutScreen";
 
+const Tab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
 
 function GameTabs() {
