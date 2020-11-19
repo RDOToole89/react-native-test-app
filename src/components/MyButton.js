@@ -22,7 +22,6 @@ export default function MyButton({ title, onPress }) {
           toValue: 1,
           speed: 50,
           bounciness: 10,
-          useNativeDriver: true,
         }).start();
       }}
       onPressOut={(e) => {

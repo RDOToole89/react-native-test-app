@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Alert, Share, Animated } from "react-native";
+import { View, Text, Alert, Share, Animated, Button } from "react-native";
 import { DeviceMotion } from "expo-sensors";
 import MyButton from "../components/MyButton";
 
-export default function GameScreen() {
+export default function GameScreen({ navigation, route }) {
   const [paused, setPaused] = useState(false);
   const [color, setColor] = useState("white");
+
+  const { count } = route.params;
 
   const share = async (color) => {
     try {
@@ -57,6 +59,7 @@ export default function GameScreen() {
       }}
     >
       <Text style={{ marginBottom: 20, fontSize: 24, fontWeight: "bold" }}>Choose your color!</Text>
+      <Text style={{ fontWeight: "bold", fontSize: 20 }}>Time I've been here: {count}</Text>
       <View style={{ marginBottom: 20 }}>
         <MyButton
           title={paused ? "Restart" : "Pause"}
@@ -70,6 +73,10 @@ export default function GameScreen() {
         onPress={() => {
           share(color);
         }}
+      />
+      <Button
+        title="Go to Home"
+        onPress={() => navigation.navigate("Home", { count: count + 1 })}
       />
     </View>
   );

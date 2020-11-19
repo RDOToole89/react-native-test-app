@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 
-export default function App() {
+export default function Flex() {
   return (
     <View style={{ flexDirection: "row", height: "100%" }}>
       <View style={{ flex: 1, width: "20%", backgroundColor: "rebeccapurple" }} />
